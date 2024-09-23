@@ -1,8 +1,12 @@
 {
   "hosting": {
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
     "github": {
       "repo": "hao20167/hao20167.github.io",
       "branch": "main" 
     }
   }
-}
