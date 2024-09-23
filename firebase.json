@@ -1,0 +1,7 @@
+"hosting": {
+  // ... other hosting settings
+  "github": {
+    "repo": "hao20167/hao20167.github.io",
+    "branch": "main" // or specify your desired branch
+  }
+}
