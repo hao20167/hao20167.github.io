@@ -24,4 +24,4 @@ jobs:
     - name: Deploy to Firebase
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}  # Sử dụng token đã lưu
-      run: firebase deploy --token $FIREBASE_TOKEN --project your-project-id  # Thay your-project-id bằng ID dự án Firebase của bạn
+      run: firebase deploy --token $FIREBASE_TOKEN --project mmq666-baea1
