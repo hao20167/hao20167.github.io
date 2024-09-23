@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="cv.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <style>
+        #my-chart {
+            padding: 0 10%;
+            display: flex;
+            justify-content:
+                space-between;
+            gap: 10px;
+        }
+
+        #chart-learning {
+            width: 49%;
+            margin: 35px auto;
+        }
+
+        #chart-training {
+            width: 49%;
+            margin: 35px auto;
+        }
+    </style>
+</head>
+<html>
+
+<body>
+    <div id="navbar">
+        <div id="navbar-top">
+            <div class="box-small" id="navbar-top-item-left">
+                <div class="box-title">title</div>
+                <div class="box-des">des</div>
+                <div class="box-icon-container">
+                    <img src="./img/hust.png">
+                </div>
+            </div>
+            <div class="box-small" id="navbar-top-item-right">
+                <div class="box-title">title</div>
+                <div class="box-des">des</div>
+                <div class="box-icon-container">
+                    <img class="box-icon" src="./img/hust.png">
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-list">
+            <ul>
+                <li><a href="">Trang chủ</a></li>
+                <li><a href="">Ngoại khóa</a></li>
+                <li><a href="">Hướng nghiệp</a></li>
+                <li><a href="">Học bổng</a></li>
+                <li><a href="">Chấm điểm</a></li>
+                <li><a href="">Hành chính</a></li>
+                <li><a href="">Q&A</a></li>
+                <li><a href="">Hồ sơ</a></li>
+                <li><a href="">Nhập học</a></li>
+            </ul>
+        </nav>
+        <div id="navbar-current-path"></div>
+    </div>
+    <div class="web-body">
+        <div style="display: flex;flex-direction: column;">
+            <div style="position: relative;" class="card" id="card-user-info">
+                <div class="card-background-container">
+                    <img class="card-background" src="./img/hust-back.png">
+                </div>
+                <div
+                    style="position: absolute; top:10vw; left:2vw ; border-radius: 50%; border: 0.3vw solid white; width: 10vw;height: 10vw; overflow: hidden;">
+                    <img style="width: 100%;" src="./img/soict.jpg">
+                </div>
+                <!-- <img  src="./img/hust.png"> -->
+                <div class="card-body" style="margin-top: 5vw;">
+                    <ul>
+                        <li>MS: 20202020</li>
+                        <li>Họ tên: Đại học Bách Khoa</li>
+                        <li>Lớp: Khoa học máy tính</li>
+                        <li>Email: bkhn@sis.hust.edu.vn</li>
+                        <li>Email cá nhân: bkhn@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card" id="card-more-info">
+                <div class="navbar-list">
+                    <ul>
+                        <li><a class="active" onclick="tabOnClick(event,'#card-more-info','trangthai')">Trạng thái</a>
+                        </li>
+                        <li><a onclick="tabOnClick(event,'#card-more-info')">Quản lý</a></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div id="trangthai">
+                        <div class="text-block-body">
+                            <div>
+                                <p>Trạng thái học tập: Học</p>
+                                <p>
+                                    CPA: 3.95
+                                </p>
+                                <p>
+                                    Nợ: 0 TC
+                                </p>
+                                <p>Tích lũy: 99 TC</p>
+                                <p>Mức cảnh cáo: M0</p>
+                                <p>Trình độ:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="card-management-info">
+            <div class="navbar-list">
+                <ul>
+                    <li><a class="active" onclick="tabOnClick(event,'#card-management-info','cmi-lylich')">Lý lịch</a>
+                    </li>
+                    <li><a onclick="tabOnClick(event,'#card-management-info')">Quyết định</a></li>
+                    <li><a onclick="tabOnClick(event,'#card-management-info')">Khen thưởng</a></li>
+                    <li><a onclick="tabOnClick(event,'#card-management-info')">Liên hệ</a></li>
+                    <li><a onclick="tabOnClick(event,'#card-management-info')">Nhận xét</a></li>
+                    <li><a onclick="tabOnClick(event,'#card-management-info')">Hoạt động tham gia</a></li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div id="cmi-lylich">
+                    <div>
+                        <div>
+                            <h4>
+                                Thông tin cá nhân
+                            </h4>
+                            <div class="text-block-body">
+                                <div>
+                                    <p>Ngày sinh: 01/01/2000</p>
+                                    <p>Số CMTND:</p>
+                                    <p>Dân tộc:</p>
+                                    <p>Ngày vào Đoàn:</p>
+                                </div>
+                                <div>
+                                    <p>Nơi sinh: Việt Nam</p>
+                                    <p>Nơi cấp: Việt Nam</p>
+                                    <p>Tôn giáo: Không</p>
+                                    <p>Ngày vào Đảng:</p>
+                                </div>
+                                <div>
+                                    <p>Giới tính: </p>
+                                    <p>
+                                        Ngày cấp:
+                                    </p>
+                                    <p>
+                                        Chi đoàn:
+                                    </p>
+                                    <p>Đoàn viên</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-block-body">
+                            <div>
+                                <p>
+                                    Đối tượng chính sách:
+                                </p>
+                                <p>
+                                    Số thẻ bảo hiểm: 123
+                                </p>
+                                <p>
+                                    Địa chỉ thường trú: 1 Đại Cồ Việt
+                                </p>
+                                <p>
+                                    Nơi ở hiện tại: 1 Đại Cồ Việt
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>
+                                Thông tin gia đình
+                            </h4>
+                            <div>
+                                <div>
+                                    <div class="text-block-body text-bold">
+                                        <p>
+                                            Họ và tên bố:
+                                        </p>
+                                    </div>
+                                    <div class="text-block-body">
+                                        <div>
+                                            <p>Dân tộc: Kinh</p>
+                                            <p>
+                                                Nơi làm việc:
+                                            </p>
+                                            <p>
+                                                Địa chỉ thường trú:
+                                            </p>
+                                            <p>Liên hệ:</p>
+                                        </div>
+                                        <div>
+                                            <p>Năm sinh:</p>
+                                            <p>
+                                                Tôn giáo:
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>Quốc tịch:</p>
+                                            <p>Nghề nghiệp:</p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="text-block-body text-bold">
+                                <p>
+                                    Họ và tên mẹ:
+                                </p>
+                            </div>
+                            <div class="text-block-body">
+                                <div>
+                                    <p>Dân tộc:</p>
+                                    <p>
+                                        Nơi làm việc:
+                                    </p>
+                                    <p>
+                                        Địa chỉ thường trú:
+                                    </p>
+                                    <p>Liên hệ:</p>
+                                </div>
+                                <div>
+                                    <p>Năm sinh:</p>
+                                    <p>
+                                        Tôn giáo:
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>Quốc tịch:</p>
+                                    <p>Nghề nghiệp:</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-block-body text-bold">
+                        Thông tin người thân khác:
+                    </div>
+                    <div class="text-block-body text-bold">
+                        <div>
+                            Thuộc hộ:
+                        </div>
+                        <div>
+                            Số sổ:
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <div id="my-chart">
+        <!-- <img src="img/chart.png" style="width: 100%;"> -->
+        <div id="chart-learning"></div>
+        <div id="chart-training"></div>
+    </div>
+    <div id="footer">
+    </div>
+    <script src="cv.js"></script>
+    <script>
+        var dataSeriesLearning = [3.2, 3.8, 3.6, 4.0];
+        var dataSeriesTraining = Array(4).fill(0).map(point => Math.floor(Math.random() * 100));  /// array of numbers
+    
+        var optionsLearning = {
+            chart: {
+                height: 400,
+                type: "bar",
+                stacked: false
+            },
+            dataLabels: {
+                enabled: true,
+                style: {
+                    fontSize: 13,
+                    fontWeight: 400
+                }
+            },
+            // colors: ["#05b978"],
+            series: [
+                {
+                    name: "GPA",
+                    data: dataSeriesLearning
+                },
+            ],
+            plotOptions: {
+                bar: {
+                    columnWidth: "50%"  // column width x axis
+                }
+            },
+            xaxis: {
+                categories: [202401, 202402, 202501, 202502],
+                axisBorder: {
+                    color: "#0086b3"
+                },
+            },
+            yaxis: [
+                {
+                    axisTicks: {
+                        show: true
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: "#0086b3"
+                    },
+                    labels: {
+                        style: {
+                            colors: "#0086b3"
+                        }
+                    },
+                    title: {
+                        text: "Biểu đồ kết quả học tập",
+                        style: {
+                            color: "#0086b3",
+                            fontSize: 14,
+                            fontWeight: 400
+                        }
+                    },
+                    max: 4  // max height y axis
+                },
+            ],
+            tooltip: {
+                shared: false,
+                intersect: true,
+                x: {
+                    show: false
+                }
+            },
+            legend: {
+                horizontalAlign: "left",
+                offsetX: 40
+            }
+        };
+
+        var optionsTraining = {
+            chart: {
+                height: 400,
+                type: "bar",
+                stacked: false
+            },
+            dataLabels: {
+                enabled: true
+            },
+            colors: ["#05b978"],
+            series: [
+                {
+                    name: "Biểu đồ rèn luyện",
+                    data: dataSeriesTraining
+                },
+            ],
+            plotOptions: {
+                bar: {
+                    columnWidth: "50%"  // column width x axis
+                }
+            },
+            xaxis: {
+                categories: [202401, 202402, 202051, 20252],
+                axisBorder: {
+                    color: "#0086b3"
+                },
+            },
+            yaxis: [
+                {
+                    axisTicks: {
+                        show: true
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: "#0086b3"
+                    },
+                    labels: {
+                        style: {
+                            colors: "#0086b3"
+                        }
+                    },
+                    title: {
+                        text: "Điểm rèn luyện",
+                        style: {
+                            color: "#0086b3",
+                            fontSize: 14,
+                            fontWeight: 500
+                        }
+                    },
+                    max: 100  // max height y axis
+                },
+            ],
+            tooltip: {
+                shared: false,
+                intersect: true,
+                x: {
+                    show: false
+                }
+            },
+            legend: {
+                horizontalAlign: "left",
+                offsetX: 40
+            }
+        };
+
+        var chartLearning = new ApexCharts(document.querySelector("#chart-learning"), optionsLearning);
+        var chartTraining = new ApexCharts(document.querySelector("#chart-training"), optionsTraining);
+
+        chartLearning.render();
+        chartTraining.render()
+    </script>
+
+</body>
+
+</html>
