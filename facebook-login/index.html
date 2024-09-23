@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Facebook Signup</title>
+</head>
+
+<body>
+    <div class="signup" id="signup">
+        <div class="top">
+            <div>
+                <h1>Sign Up</h1>
+                <p>It's quick and easy</p>
+            </div>
+            <img src="img/cross.png" alt="" onclick="">
+        </div>
+        <hr>
+        <p class="warner-paragraph" id="warner-main"></p>
+        <form id="signup_form" class="signup_form">
+            <div class="signup_body">
+                <div id="name-input">
+                    <input id="first-name-in" name="first-name" type="text" placeholder="First Name" class="same">
+                    <input id="last-name-in" name="last-name" type="text" placeholder="Last Name" class="same">
+                </div>
+                <div id="email-password-input">
+                    <input id="email-in" name="email" type="text" placeholder="Email or Phone Number">
+                    <input id="password-in" name="password" type="password" placeholder="New Password">
+                </div>
+            </div>
+
+            <div id="birthday-input">
+                <p class="text">Birthday</p>
+                <div class="date">
+                    <select id="birthday" name="birthday">
+                    </select>
+                    <select id="birthmonth" name="birthmonth">
+                        <option value="0">Jan</option>
+                        <option value="1">Feb</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">Aug</option>
+                        <option value="8">Sep</option>
+                        <option value="9">Oct</option>
+                        <option value="10">Nov</option>
+                        <option value="11">Dec</option>
+                    </select>
+                    <select name="birthyear" id="birthyear">
+                    </select>
+                </div>
+            </div>
+            <div id="gender-input">
+                <p class="text">Gender</p>
+                <div class="person">
+                    <div>
+                          <label for="female">Female</label>
+                        <input name="gender" type="radio" id="female" value="female">
+
+                    </div>
+                     <div>
+
+                          <label for="male">Male</label>
+                        <input name="gender" type="radio" id="male" value="male">
+                    </div>
+                      <div>
+
+                          <label for="custom">Custom</label>
+                        <input name="gender" type="radio" id="custom" value="custom">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <p>
+                    People who use our service may have uploaded your contact information to Facebook. <a>Learn
+                        more.</a>
+                </p>
+                <p>By clicking Sign Up, you agree to our Terms, <a>Privacy Policy and Cookies
+                        Policy</a>. You may receive
+                    SMS
+                    Notifications from us and can opt out any time.</p>
+            </div>
+            <button class="signin" type="submit">Sign Up</button>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
