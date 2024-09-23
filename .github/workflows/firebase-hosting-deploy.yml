@@ -1,30 +1,27 @@
-name: Deploy to Firebase Hosting
+name: Deploy to Firebase
 
 on:
   push:
     branches:
-      - main # Change this to your desired branch
+      - main  # Thay đổi nếu bạn sử dụng nhánh khác
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'  # Hoặc '20'
 
-      - name: Install Firebase CLI
-        run: npm install -g firebase-tools
+    - name: Install Firebase CLI
+      run: npm install -g firebase-tools
 
-      - name: Authenticate with Firebase
-        run: firebase login:ci
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-
-      - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting
+    - name: Deploy to Firebase
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}  # Sử dụng token đã lưu
+      run: firebase deploy --token $FIREBASE_TOKEN --project your-project-id  # Thay your-project-id bằng ID dự án Firebase của bạn
